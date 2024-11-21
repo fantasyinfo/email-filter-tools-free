@@ -1,0 +1,32 @@
+[
+  {
+    "host": "server.abc.info",
+    "username": "admin@email.info",
+    "fromemail": "reply@email.info",
+    "password": "SecretPass!123!",
+    "port": 25,
+    "is_ssl": "Yes",
+    "dailylimit": 90,
+    "delay": 20
+  },
+  {
+    "host": "server.abc.info2",
+    "username": "admin@email.info2",
+    "fromemail": "reply@email.info2",
+    "password": "SecretPass!123!2",
+    "port": 2525,
+    "is_ssl": "No",
+    "dailylimit": 1000,
+    "delay": 209
+  },
+  {
+    "host": "server.abc.info2",
+    "username": "admin@email.info2",
+    "fromemail": "billureply@email.info2",
+    "password": "SecretPass!123!2",
+    "port": 2525,
+    "is_ssl": "No",
+    "dailylimit": 1000,
+    "delay": 209
+  }
+]

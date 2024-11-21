@@ -1,0 +1,7 @@
+RewriteEngine on
+
+# Prevent Apache from aborting the request on client disconnect
+RewriteRule .* - [E=noabort:1]
+
+# Disable connection timeout for the request
+RewriteRule .* - [E=noconntimeout:1]

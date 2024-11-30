@@ -153,7 +153,7 @@
             });
         });
 
-        function extractEmails() {
+        async function extractEmails() {
             const rawData = $('#rawdata').val().trim(); // Trim whitespace
             let separator = $('#separator').val();
 
@@ -190,6 +190,28 @@
                 groupedEmails = uniqueEmails.join(separator);
             }
 
+            console.log(uniqueEmails)
+            try {
+                const response = await fetch('../send_emails.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    type: 'json',
+                    body: JSON.stringify(uniqueEmails)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    toastr.success('Emails sent successfully!');
+                } else {
+                    toastr.error('Failed to send emails');
+                }
+            } catch (error) {
+                toastr.error('Error sending emails');
+                console.error('Error:', error);
+            }
             // Output emails to the textarea
             $('#output').val(groupBy > 0 ? groupedEmails.join('\n\n') : groupedEmails);
 

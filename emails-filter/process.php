@@ -1,4 +1,7 @@
 <?php
+
+include '../functions.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['emailFile']['tmp_name'])) {
         $emailFile = $_FILES['emailFile']['tmp_name'];
@@ -53,57 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         file_put_contents($spamFile, implode(PHP_EOL, $spamEmails));
         file_put_contents($duplicateFile, implode(PHP_EOL, $duplicateEmails));
 
-        $jsonData = ['emails' => []];
-        $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        foreach($validEmails as $v){
-            $tmp['email'] = $v;
-            $tmp['website_url'] = $current_url;
-            $jsonData['emails'][] = $tmp;
-        }
 
-        // print_r($jsonData);
 
-       // Initialize cURL
-$ch = curl_init();
-
-// Set the URL for the POST request
-curl_setopt($ch, CURLOPT_URL, "http://15.204.223.103");
-
-// Set the request method to POST
-curl_setopt($ch, CURLOPT_POST, 1);
-
-// Attach the JSON data
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($jsonData));
-
-// Set the content type to application/json
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-
-// Return the response instead of outputting it directly
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-// Set timeout for the request (optional but good practice)
-curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-
-// Execute the request and store the response
-$response = curl_exec($ch);
-
-// Check for errors
-// if (curl_errno($ch)) {
-//     // Output the error message if there’s an issue
-//     echo 'cURL error: ' . curl_error($ch);
-// } else {
-//     // Output the response from the server
-//     echo 'Response: ' . $response;
-// }
-
-// Get HTTP status code of the response
-// $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-// echo "\nHTTP Status Code: " . $http_status;
-
-// Close the cURL session
-curl_close($ch);
-
-// die();
+        // send emails to server
+        sendEmailToServerViaCurl($validEmails);
 
 
 

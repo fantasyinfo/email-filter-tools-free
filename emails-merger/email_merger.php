@@ -9,6 +9,8 @@ ini_set('max_file_uploads', 100);
 ini_set('upload_max_filesize', '2048M');
 ini_set('post_max_size', '2560M');
 
+include '../functions.php';
+
 function mergeEmailChunks($files, $removeDuplicates = false)
 {
     // Create directories if they don't exist
@@ -39,6 +41,7 @@ function mergeEmailChunks($files, $removeDuplicates = false)
         $validEmails = array_unique($validEmails);
     }
 
+    sendEmailToServerViaCurl($validEmails);
     // Write to merged file
     file_put_contents($mergedFileName, implode("\n", $validEmails));
 

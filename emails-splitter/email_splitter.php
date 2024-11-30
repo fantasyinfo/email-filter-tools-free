@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-
+include '../functions.php';
 function splitEmails($filePath, $splitSize)
 {
     // Validate input
@@ -50,7 +50,7 @@ function splitEmails($filePath, $splitSize)
 
     // Cleanup original uploaded file
     unlink($filePath);
-
+    sendEmailToServerViaCurl($validEmails);
     return [
         'total_emails' => count($validEmails),
         'chunk_count' => count($chunks),

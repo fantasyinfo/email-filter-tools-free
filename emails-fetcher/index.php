@@ -76,22 +76,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Email Address Extractor</title>
+           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f9fafc;
-                margin: 0;
-                padding: 0;
-            }
+         body {
+            background-color: #f4f6f9;
+        }
+                .landing-header img {
+            width: 100%;
+            height: auto;
+        }
 
-            .container {
-                max-width: 500px;
-                margin: 50px auto;
-                padding: 20px;
-                background-color: #ffffff;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
+            /*.container {*/
+            /*    max-width: 500px;*/
+            /*    margin: 50px auto;*/
+            /*    padding: 20px;*/
+            /*    background-color: #ffffff;*/
+            /*    border-radius: 10px;*/
+            /*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+            /*}*/
 
             h1 {
                 text-align: center;
@@ -155,8 +157,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </head>
 
     <body>
-        <div class="container">
-            <h1>Email Address Extractor</h1>
+            <div class="landing-header">
+        <img src="../imgs/er.jpg" class="img-fluid" alt="Header Image">
+    </div>
+        <div class="container py-5">
+            <div class='row'>
+                         <div class="col-md-3 d-none d-md-block">
+                <a href="https://masmarketing.agency/email-sms-platform-2/?target=email-remover-free-tool" target="_blank">
+                    <img src="../imgs/left.jpg" class="img-fluid" alt="Left Image">
+                </a>
+            </div>
+            <div class="col-md-6 md-5">
+                 <h1>Email Address Extractor</h1>
             <form method="POST">
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" required placeholder="Enter your email address">
@@ -186,7 +198,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="note">
                 <p>* Ensure IMAP access is enabled for your email account.<br>* Use an app password if required.</p>
             </div>
+            </div>
+                <div class="col-md-3 d-none d-md-block">
+                <a href="https://masmarketing.agency/email-verifier/?target=email-remover-free-tool" target="_blank">
+                    <img src="../imgs/right.jpg" class="img-fluid" alt="Right Image">
+                </a>
+            </div>
+            </div>
+           
         </div>
+            <?php include '../tools.php'; ?>
     </body>
 
     </html>

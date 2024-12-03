@@ -131,6 +131,18 @@ $home = 'http://localhost/email-filter-tools-free';
                     </a>
                 </div>
             </div>
+ <div class="col-md-4 col-sm-6 mb-4">
+                <div class="tool-card">
+                    <div class="icon text-info">
+                     <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h5>Email Fetcher</h5>
+                    <p>Fetch all your emails from inbox</p>
+                    <a href="<?= $home ?>/emails-fetcher/index.php" class="btn btn-outline-info">
+                        Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 <?php
 
-$home = 'http://localhost/email-filter-tools-free';
+// $home = 'http://localhost/email-filter-tools-free';
+$home = 'http://localhost:8000';
 ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
@@ -88,9 +89,9 @@ $home = 'http://localhost/email-filter-tools-free';
                     <div class="icon text-success">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
-                    <h5>Email Divider</h5>
+                    <h5>Email Extractor</h5>
                     <p>Divide emails from various syntax quickly</p>
-                    <a href="<?= $home ?>/emails-divider" class="btn btn-outline-success">
+                    <a href="<?= $home ?>/emails-extractor" class="btn btn-outline-success">
                         Open Tool <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -102,7 +103,7 @@ $home = 'http://localhost/email-filter-tools-free';
                     </div>
                     <h5>Domains Extractor</h5>
                     <p>Extract unique domain names with ease</p>
-                    <a href="<?= $home ?>/domains-extractor/index.php" class="btn btn-outline-info">
+                    <a href="<?= $home ?>/domains-extractor" class="btn btn-outline-info">
                         Open Tool <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -114,7 +115,7 @@ $home = 'http://localhost/email-filter-tools-free';
                     </div>
                     <h5>Email Merger</h5>
                     <p>Combine multiple email lists seamlessly</p>
-                    <a href="<?= $home ?>/emails-merger/index.php" class="btn btn-outline-warning">
+                    <a href="<?= $home ?>/emails-merger" class="btn btn-outline-warning">
                         Open Tool <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -126,7 +127,7 @@ $home = 'http://localhost/email-filter-tools-free';
                     </div>
                     <h5>Email Splitter</h5>
                     <p>Divide email lists into precise segments</p>
-                    <a href="<?= $home ?>/emails-splitter/index.php" class="btn btn-outline-danger">
+                    <a href="<?= $home ?>/emails-splitter" class="btn btn-outline-danger">
                         Open Tool <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -138,7 +139,7 @@ $home = 'http://localhost/email-filter-tools-free';
                     </div>
                     <h5>Email Fetcher</h5>
                     <p>Fetch all your emails from inbox</p>
-                    <a href="<?= $home ?>/emails-fetcher/index.php" class="btn btn-outline-info">
+                    <a href="<?= $home ?>/emails-fetcher" class="btn btn-outline-info">
                         Open Tool <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>

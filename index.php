@@ -8,7 +8,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for Icons -->
+<style>
+         .landing-header img {
+            width: 100%;
+            height: auto;
+        }
 
+</style>
 </head>
 
 <body>
